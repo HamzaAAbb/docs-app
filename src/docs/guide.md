@@ -239,6 +239,10 @@ Swap the `src` for your own images whenever you like.
 
 ![Small placeholder](https://placehold.co/400x200?text=Feature+Screenshot)
 
+### With a local image
+
+![alt text](/images/phone-logo.png)
+
 ### Side-by-side images (via HTML in md)
 
 <img src="https://placehold.co/360x200?text=Before" alt="Before" width="48%" />
