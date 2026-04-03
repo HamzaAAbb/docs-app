@@ -243,6 +243,10 @@ Swap the `src` for your own images whenever you like.
 
 ![alt text](/images/phone-logo.png)
 
+### With a local image while modifying the width
+
+<img src="/images/phone-logo.png" alt="alt text" style="width: 60%; display: block; margin: 0 auto;" />
+
 ### Side-by-side images (via HTML in md)
 
 <img src="https://placehold.co/360x200?text=Before" alt="Before" width="48%" />
