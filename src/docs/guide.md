@@ -245,7 +245,7 @@ Swap the `src` for your own images whenever you like.
 
 ### With a local image while modifying the width
 
-<img src="/images/phone-logo.png" alt="alt text" style="width: 60%; display: block; margin: 0 auto;" />
+<img src="/images/phone-logo.png" alt="alt text" style="width: 35%; display: block; margin: 0 auto;" />
 
 ### Side-by-side images (via HTML in md)
 

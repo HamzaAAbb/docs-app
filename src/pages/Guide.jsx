@@ -1,6 +1,6 @@
 import MarkdownRenderer from '../components/MarkdownRenderer'
 import TableOfContents from '../components/TableOfContents'
-import defaultContent from '../docs/guide.md?raw'
+import defaultContent from '../docs/usage-guide.md?raw'
 import styles from './Guide.module.css'
 
 export default function Guide() {
