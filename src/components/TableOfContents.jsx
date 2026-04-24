@@ -47,7 +47,6 @@ export default function TableOfContents({ content }) {
 
   return (
     <nav className={styles.toc}>
-      <p className={styles.tocTitle}>On this page</p>
       <ul className={styles.list}>
         {headings.map((h) => (
           <li key={h.id} className={styles.item}>

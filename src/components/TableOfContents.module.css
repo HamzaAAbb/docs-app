@@ -1,10 +1,5 @@
 .toc {
-  position: sticky;
-  top: calc(var(--nav-height) + 2rem);
-  max-height: calc(100vh - var(--nav-height) - 4rem);
-  overflow-y: auto;
-  width: 220px;
-  flex-shrink: 0;
+  /* sizing and scroll are handled by the sidebar in Guide.module.css */
 }
 
 .tocTitle {

@@ -10,7 +10,9 @@ export default function Guide() {
         <TableOfContents content={defaultContent} />
       </aside>
       <div className={styles.content}>
-        <MarkdownRenderer content={defaultContent} />
+        <div className={styles.contentInner}>
+          <MarkdownRenderer content={defaultContent} />
+        </div>
       </div>
     </main>
   )
