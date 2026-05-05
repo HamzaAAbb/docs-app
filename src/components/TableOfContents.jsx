@@ -5,8 +5,18 @@ import styles from './TableOfContents.module.css'
 function extractHeadings(markdown) {
   const lines = markdown.split('\n')
   const headings = []
+  let inCodeBlock = false
 
   for (const line of lines) {
+    // Toggle code block state when we hit a fence
+    if (line.trimStart().startsWith('```')) {
+      inCodeBlock = !inCodeBlock
+      continue
+    }
+
+    // Skip everything inside a code block
+    if (inCodeBlock) continue
+
     const match = line.match(/^(#{1,3})\s+(.+)/)
     if (match) {
       const level = match[1].length

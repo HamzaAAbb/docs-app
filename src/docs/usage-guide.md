@@ -163,9 +163,9 @@ No Modulefiles Currently Loaded.
 **Step 1) Login to one of the Login nodes and load anaconda module then inititlize it**
 
 ```bash
-[ababou.hamza@login1 ~]$ module use /app/common/modules/
-[ababou.hamza@login1 ~]$ module load anaconda3-2024.10 
-[ababou.hamza@login1 ~]$ /app/common/anaconda3-2024.10/bin/conda init
+[username@login1 ~]$ module use /app/common/modules/
+[username@login1 ~]$ module load anaconda3-2024.10 
+[username@login1 ~]$ /app/common/anaconda3-2024.10/bin/conda init
 no change     /app/common/anaconda3-2024.10/condabin/conda
 no change     /app/common/anaconda3-2024.10/bin/conda
 no change     /app/common/anaconda3-2024.10/bin/conda-env
@@ -177,12 +177,12 @@ no change     /app/common/anaconda3-2024.10/shell/condabin/Conda.psm1
 no change     /app/common/anaconda3-2024.10/shell/condabin/conda-hook.ps1
 no change     /app/common/anaconda3-2024.10/lib/python3.12/site-packages/xontrib/conda.xsh
 no change     /app/common/anaconda3-2024.10/etc/profile.d/conda.csh
-modified      /home/ababou.hamza/.bashrc
+modified      /home/username/.bashrc
 
 ==> For changes to take effect, close and re-open your current shell. <==
 
-[ababou.hamza@login1 ~]$ source .bashrc
-(base) [ababou.hamza@login1 ~]$ 
+[username@login1 ~]$ source .bashrc
+(base) [username@login1 ~]$ 
 ```
 At this point, conda is initialized and will be available at later sessions without having to load its module every time
 
@@ -292,19 +292,19 @@ All the files related to this project will be in this repository
 To set up a conda environment, we need first to determine which versions of the libraries we use. In this project we are using mainly Tensorflow. To determine which versions we need to lookup in official documentation which versions are compatible whith the local versions of either the Nvidia drivers as well as the CUDA toolkit, not to be confused with the CUDA version installed in the execution nodes. In our case the version of the CUDA toolkit installed is 12.4 and the version of CUDA is 13.2 so we need to lookup compatible version with 12/4 and not 13.2, among them is Tensorflow 2.21.0 which is in turn compatible with python 3.11
 
 ```bash
-(base) [ababou.hamza@login1 ~]$ conda create -n test-project-env python=3.11
+(base) [username@login1 ~]$ conda create -n test-project-env python=3.11
 ```
 Then we start installing the required packages
 
 Note that installing tensorflow, or any other library that relies heavily on the hardware it run on, is recommended to be installed via `pip` over `conda` to avoid potential issue
 
 ```bash
-(base) [ababou.hamza@login1 ~]$ conda activate test-project-env
-(test-project-env) [ababou.hamza@login1 ~]$ pip install tensorflow==2.21.0 nbconvert nvidia-cudnn-cu12
+(base) [username@login1 ~]$ conda activate test-project-env
+(test-project-env) [username@login1 ~]$ pip install tensorflow==2.21.0 nbconvert nvidia-cudnn-cu12
 ```
 We continue installing some other packages
 ```bash
-(test-project-env) [ababou.hamza@login1 ~]$ conda install kagglehub jupyter
+(test-project-env) [username@login1 ~]$ conda install kagglehub jupyter
 ```
 ### Downloading the datasets
 
@@ -351,7 +351,7 @@ The following line is sometimes required in order to tell the execution node to 
 Finally we change to the directory from where we submitted the job and execute the script. Then we submit the job with the following command
 
 ```bash
-(test-project-env) [ababou.hamza@login1 test-project]$ qsub check-imports.pbs 
+(test-project-env) [username@login1 test-project]$ qsub check-imports.pbs 
 11193.head1
 ```
 
@@ -360,7 +360,7 @@ The output of the job is divided into two files that we can find after the job i
 In our case this is the output of the job we did to check the imports
 
 ```bash
-(test-project-env) [ababou.hamza@login1 test-project]$ cat testing.o11193 
+(test-project-env) [username@login1 test-project]$ cat testing.o11193 
 ==================================================
 Checking required imports...
 ==================================================
@@ -380,7 +380,7 @@ In our case, instead of having all of the opeations in a python script, we have 
 Submitting the job for the main operation is done the same way as the previous showcase when we were checking the imports. This is the PBS script used to submit the job
 
 ```bash
-(test-project-env) [ababou.hamza@login1 test-project]$ cat main-job.pbs
+(test-project-env) [username@login1 test-project]$ cat main-job.pbs
 #!/bin/bash
 
 #PBS -N testing
